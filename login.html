@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <style>
+        /* Navbar Styles */
+        .navbar {
+            position: absolute; /* Absolute positioning to move it around */
+            top: 0;
+            right: 0;
+            display: flex;
+            background-color: rgba(0, 87, 179, 0.035);
+            padding: 20px 40px;
+            border-radius: 0 0 0 10px; /* Rounds bottom-left corner */
+        }
+
+        /* Navbar Links */
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 20px 40px;
+            text-align: center;
+            font-size: 25px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            border-radius: 8px;
+            margin-left: 10px;
+        }
+
+        /* Hover Animation */
+        .navbar a:hover {
+            background-color: #b92022;
+            transform: scale(1.1);
+        }
+
+        /* Active Link (Optional) */
+        .navbar a.active {
+            background-color: #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="search.html">Search Donor</a>
+        <a href="register.html">Register</a>
+        <a href="login.html">Login</a>
+    </div>
+
+
+
+
+
+
+
+    <div class="container">
+        <h2>User Login Form</h2>
+        <form id="loginForm" action="connect.php" method="post">
+            <input type="hidden" name="form_type" value="login">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="bloodGroup">Blood Group:</label>
+                <select id="bloodGroup" name="bloodGroup" required>
+                    <option value="" disabled selected>Select your blood group</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
+            <div id="additional-options">
+                <p>Don't have an account?</p>
+                <p><a href="register.html">Register Now</a></p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

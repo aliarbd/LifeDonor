@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Donors</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('registerPage.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background-color: hsla(0, 0%, 100%, 0.605);
+            padding: 30px;
+            border-radius: 12px;
+            width: 400px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            animation: slideIn 1s ease;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px 15px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+            transition: border 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .results {
+            margin-top: 20px;
+        }
+
+        .donor {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+  <style>
+    /* Navbar Styles */
+    .navbar {
+        position: absolute; /* Absolute positioning to move it around */
+        top: 0;
+        right: 0;
+        display: flex;
+        background-color: rgba(0, 87, 179, 0.035);
+        padding: 20px 40px;
+        border-radius: 0 0 0 10px; /* Rounds bottom-left corner */
+    }
+
+    /* Navbar Links */
+    .navbar a {
+        color: white;
+        text-decoration: none;
+        padding: 20px 40px;
+        text-align: center;
+        font-size: 25px;
+        font-weight: bold;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        border-radius: 8px;
+        margin-left: 10px;
+    }
+
+    /* Hover Animation */
+    .navbar a:hover {
+        background-color: #b92022;
+        transform: scale(1.1);
+    }
+
+    /* Active Link (Optional) */
+    .navbar a.active {
+        background-color: #0056b3;
+    }
+
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <a href="register.html">Register</a>
+    <a href="login.html">Login</a>
+</div>
+
+
+    <div class="container">
+        <h2>Search Donors</h2>
+        <form id="searchForm">
+            <!-- Blood Group Field -->
+            <div class="form-group">
+                <label for="blood_group">Blood Group</label>
+                <select id="blood_group" name="blood_group" required>
+                  <option value="">Select Blood Group</option>
+                  <option value="A+">A+</option>
+                  <option value="A-">A-</option>
+                  <option value="B+">B+</option>
+                  <option value="B-">B-</option>
+                  <option value="AB+">AB+</option>
+                  <option value="AB-">AB-</option>
+                  <option value="O+">O+</option>
+                  <option value="O-">O-</option>
+                  <!-- Add more area options as needed -->
+              </select>
+            </div>
+
+            <!-- Area Field -->
+            <div class="form-group">
+                <label for="area">Area</label>
+                <select id="area" name="area" required>
+                    <option value="">Select Area</option>
+                    <option value="Area1">Area 1</option>
+                    <option value="Area2">Area 2</option>
+                    <option value="Area3">Area 3</option>
+                    <!-- Add more area options as needed -->
+                </select>
+            </div>
+
+            <!-- Thana Field -->
+            <div class="form-group">
+                <label for="thana">Thana</label>
+                <select id="thana" name="thana" required>
+                    <option value="">Select Thana</option>
+                    <option value="Thana1">Thana 1</option>
+                    <option value="Thana2">Thana 2</option>
+                    <option value="Thana3">Thana 3</option>
+                    <!-- Add more thana options as needed -->
+                </select>
+            </div>
+
+            <!-- District Field -->
+            <div class="form-group">
+                <label for="district">District</label>
+                <select id="district" name="district" required>
+                    <option value="">Select District</option>
+                    <option value="District1">District 1</option>
+                    <option value="District2">District 2</option>
+                    <option value="District3">District 3</option>
+                    <!-- Add more district options as needed -->
+                </select>
+            </div>
+
+            <button type="submit" class="submit-btn">Search</button>
+        </form>
+
+        <div class="results" id="results"></div>
+    </div>
+
+    <script>
+        document.getElementById('searchForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(document.getElementById('searchForm'));
+
+            fetch('search_donors.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                const resultsContainer = document.getElementById('results');
+                resultsContainer.innerHTML = '';
+
+                if (data.success) {
+                    data.donors.forEach(donor => {
+                        const donorDiv = document.createElement('div');
+                        donorDiv.classList.add('donor');
+                        donorDiv.innerText = `Name: ${donor.name}, Blood Group: ${donor.blood_group}, Contact: ${donor.contact}`;
+                        resultsContainer.appendChild(donorDiv);
+                    });
+                } else {
+                    resultsContainer.innerText = 'No donors found.';
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+
+        function populateSelectOptions() {
+            fetch('fetch_options.php?type=area')
+                .then(response => response.json())
+                .then(data => {
+                    const areaSelect = document.getElementById('area');
+                    data.options.forEach(option => {
+                        const opt = document.createElement('option');
+                        opt.value = option.value;
+                        opt.text = option.text;
+                        areaSelect.add(opt);
+                    });
+                });
+
+            fetch('fetch_options.php?type=thana')
+                .then(response => response.json())
+                .then(data => {
+                    const thanaSelect = document.getElementById('thana');
+                    data.options.forEach(option => {
+                        const opt = document.createElement('option');
+                        opt.value = option.value;
+                        opt.text = option.text;
+                        thanaSelect.add(opt);
+                    });
+                });
+
+            fetch('fetch_options.php?type=district')
+                .then(response => response.json())
+                .then(data => {
+                    const districtSelect = document.getElementById('district');
+                    data.options.forEach(option => {
+                        const opt = document.createElement('option');
+                        opt.value = option.value;
+                        opt.text = option.text;
+                        districtSelect.add(opt);
+                    });
+                });
+        }
+
+        populateSelectOptions();
+    </script>
+
+</body>
+</html>

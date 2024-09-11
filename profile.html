@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      /* Navbar Styles */
+      .navbar {
+          position: absolute; /* Absolute positioning to move it around */
+          top: 0;
+          right: 0;
+          display: flex;
+          background-color: rgba(0, 87, 179, 0.035);
+          padding: 20px 40px;
+          border-radius: 0 0 0 10px; /* Rounds bottom-left corner */
+      }
+  
+      /* Navbar Links */
+      .navbar a {
+          color: white;
+          text-decoration: none;
+          padding: 20px 40px;
+          text-align: center;
+          font-size: 25px;
+          font-weight: bold;
+          transition: background-color 0.3s ease, transform 0.3s ease;
+          border-radius: 8px;
+          margin-left: 10px;
+      }
+  
+      /* Hover Animation */
+      .navbar a:hover {
+          background-color: #b92022;
+          transform: scale(1.1);
+      }
+  
+      /* Active Link (Optional) */
+      .navbar a.active {
+          background-color: #0056b3;
+      }
+  
+  </style>
+  </head>
+  <body>
+  
+  <!-- Navbar -->
+  <div class="navbar">
+      <a href="register.html">Register</a>
+      <a href="login.html">Login</a>
+  </div>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .profile-container {
+            background-color: hwb(0 100% 0% / 0.745) ;
+            padding: 40px;
+            border-radius: 12px;
+            width: 400px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            border-color: #007bff;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Toggle Switch */
+        .toggle-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .toggle-label {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 50px;
+            height: 24px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 24px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+        }
+
+        input:checked + .slider {
+            background-color: #007bff;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-container">
+        <h2>Donor Profile</h2>
+        <form id="donorProfileForm" action="update_profile.php" method="post">
+
+            <!-- Name Field -->
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <!-- Email Field -->
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="form-group">
+                <label for="contact">Contact Info:</label>
+                <input type="text" id="contact" name="contact" required>
+            </div>
+
+            <!-- Thana Field -->
+            <div class="form-group">
+                <label for="thana">Thana:</label>
+                <select id="thana" name="thana" required>
+                    <option value="" disabled selected>Select your thana</option>
+                    <option value="Thana1">Thana 1</option>
+                    <option value="Thana2">Thana 2</option>
+                    <option value="Thana3">Thana 3</option>
+                    <!-- Add more options as needed -->
+                </select>
+            </div>
+
+            <!-- Area Field -->
+            <div class="form-group">
+                <label for="area">Area:</label>
+                <select id="area" name="area" required>
+                    <option value="" disabled selected>Select your area</option>
+                    <option value="Area1">Area 1</option>
+                    <option value="Area2">Area 2</option>
+                    <option value="Area3">Area 3</option>
+                    <!-- Add more options as needed -->
+                </select>
+            </div>
+
+            <!-- District Field -->
+            <div class="form-group">
+                <label for="district">District:</label>
+                <select id="district" name="district" required>
+                    <option value="" disabled selected>Select your district</option>
+                    <option value="District1">District 1</option>
+                    <option value="District2">District 2</option>
+                    <option value="District3">District 3</option>
+                    <!-- Add more options as needed -->
+                </select>
+            </div>
+
+            <!-- Availability Toggle -->
+            <div class="toggle-container">
+                <span class="toggle-label">Available to Donate:</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="availability" name="availability">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="submit">Update Profile</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
