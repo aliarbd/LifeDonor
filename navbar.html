@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <nav class="navbar">
+    <ul class="navbar-menu">
+        <li><a href="search.php">Search Donor</a></li>
+        <li><a href="register_form.php">Registration as Donor</a></li>
+        <li><a href="login_form.php">Login</a></li>
+    </ul>
+</nav>
+
+
+<style>
+/* Navbar container */
+.navbar {
+    background-color: hsla(14, 39%, 49%, 0.08); /* Green background */
+    padding: 15px; /* Padding for the navbar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    position: fixed;
+    width: auto; /* Adjust width to fit content */
+    top: 15px; /* Space from the top */
+    right: 15px; /* Space from the right */
+    z-index: 1000; /* Ensures navbar is always on top */
+    border-radius: 8px; /* Rounded corners */
+}
+
+/* Navbar Menu */
+.navbar-menu {
+    list-style-type: none; /* Remove default list styles */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Horizontal alignment */
+    justify-content: space-between; /* Space between items */
+    align-items: center;
+}
+
+/* Navbar Links */
+.navbar-menu li a {
+    text-decoration: none; /* Remove underline from links */
+    color: white; /* Text color */
+    font-size: 18px; /* Font size */
+    padding: 10px 20px; /* Padding around links */
+    font-weight: bold; /* Bold text */
+    border-radius: 8px; /* Rounded corners for links */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover Effect */
+.navbar-menu li a:hover {
+    background-color:#c02022; /* Darker background on hover */
+    color: #ffffff; /* Keep text white */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .navbar {
+        right: 10px; /* Slightly adjust space from the right on small screens */
+    }
+    .navbar-menu {
+        flex-direction: column; /* Stack items vertically */
+    }
+    .navbar-menu li {
+        margin-bottom: 10px; /* Space between items */
+    }
+}
+
+
+
+
+</style>
+
+
+</body>
+</html>
